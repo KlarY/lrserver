@@ -3,6 +3,6 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class AppService {
   root(): string {
-    return '帅帅流批!!!';
+    return 'INDEX';
   }
 }

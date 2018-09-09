@@ -62,3 +62,6 @@ typings/
 
 # ssl cert
 ssl_cert/
+
+# config
+config/
