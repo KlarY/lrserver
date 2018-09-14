@@ -48,7 +48,7 @@ export class ReminderController {
         return res.status(HttpStatus.OK).json(reminder);
     }
 
-    @Delete('user/:owner_id/reminder/:id')
+    @Delete('user/:owner_id/reminder/:_id')
     public async deleteReminder( @Param() param, @Response() res) {
 
         const reminder = await this.reminderService.delete(param.owner_id, param._id);

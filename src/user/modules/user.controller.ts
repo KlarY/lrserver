@@ -22,9 +22,9 @@ export class UserController {
         return res.status(HttpStatus.OK).json(users);
     }
 
-    @Get('user/:id')
+    @Get('user/:_id')
     public async getUser( @Response() res, @Param() param, @Req() req) {
-        const user = await this.userService.findById(param.id);
+        const user = await this.userService.findById(param._id);
         return res.status(HttpStatus.OK).json(user);
     }
 
