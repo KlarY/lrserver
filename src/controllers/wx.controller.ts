@@ -1,7 +1,6 @@
 import { Controller, Get, Req } from '@nestjs/common';
 import { HttpService } from '@nestjs/common';
 import * as config from 'config';
-import { map } from 'rxjs/operators';
 
 @Controller('wx')
 export class WxController {
