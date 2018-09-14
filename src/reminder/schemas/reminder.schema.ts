@@ -25,6 +25,12 @@ export const ReminderSchema = new mongoose.Schema(
         location_pic: {
             type: String,
         },
+        shared_users: [
+            {
+                type: mongoose.SchemaTypes.ObjectId,
+                ref: 'User',
+            },
+        ],
     },
     { collection: 'Reminder', versionKey: false },
 );

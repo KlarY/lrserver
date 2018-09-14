@@ -52,6 +52,10 @@ export class ReminderController {
     public async deleteReminder( @Param() param, @Response() res) {
 
         const reminder = await this.reminderService.delete(param.owner_id, param._id);
+        let user;
+        user = await this.userService.deleteRef(param.owner_id, param._id);
+        // user.reminders.pop(param._id);
+        // user = await this.userService.update(param.owner_id, user);
         return res.status(HttpStatus.OK).json(reminder);
     }
 }

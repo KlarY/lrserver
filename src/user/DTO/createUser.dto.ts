@@ -7,4 +7,8 @@ export class CreateUserDTO {
     readonly name: string;
 
     readonly session_key: string;
+
+    readonly reminders: object;
+
+    readonly shared_reminders: object;
 }

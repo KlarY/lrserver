@@ -20,6 +20,12 @@ export const UserSchema = new mongoose.Schema(
                 ref: 'Reminder',
             },
         ],
+        shared_reminders: [
+            {
+                type: mongoose.SchemaTypes.ObjectId,
+                ref: 'Reminder',
+            },
+        ],
     },
     { collection: 'User', versionKey: false },
 );

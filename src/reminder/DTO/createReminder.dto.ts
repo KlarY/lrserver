@@ -15,4 +15,6 @@ export class CreateReminderDTO {
     readonly pic: string;
 
     readonly location_pic: string;
+
+    readonly shared_users: object;
 }

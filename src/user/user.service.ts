@@ -8,7 +8,7 @@ export class UserService implements IUserService{
     constructor( @Inject('UsersRepository') private readonly usersRepository: Model<IUser>) { }
 
     public async findAll(): Promise<Array<IUser>> {
-        return await this.usersRepository.find().exec();
+        return await this.usersRepository.find({}, '-reminders').exec();
     }
 
     public async findOne(options: object): Promise<IUser | null> {
@@ -41,5 +41,15 @@ export class UserService implements IUserService{
         else {
             return 0;
         }
+    }
+
+    public async deleteRef(_id: string, reminder_id: string): Promise<IUser | null>{
+        let user;
+        user = await this.usersRepository.findById(_id);
+        const index = user.reminders.indexOf(reminder_id, 0);
+        if (index > -1) {
+            user.reminders.splice(index, 1);
+        }
+        return await this.usersRepository.findByIdAndUpdate(_id, user).exec();
     }
 }

@@ -16,4 +16,6 @@ export interface IReminder extends Document {
     readonly pic: string;
 
     readonly location_pic: string;
+
+    readonly shared_users: string;
 }
